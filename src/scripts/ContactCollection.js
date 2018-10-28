@@ -26,6 +26,16 @@ const contactCollection = Object.create({}, {
         method: "DELETE"
       })
     }
+  },
+  "editContact": {
+    value: function(id, contactObject) {
+      // console.log(id, nameValue, addrValue)
+      return $.ajax({
+        url: `http://localhost:3000/contacts/${id}`,
+        method:"PATCH",
+        data: contactObject,
+      })
+    }
   }
 })
 
